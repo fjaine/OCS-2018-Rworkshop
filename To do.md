@@ -1,13 +1,33 @@
+Introduction
+- [ ] why r
+- [ ] working with projects
+
 Working with and manipulating large datasets
-- [ ]  dplyr
+- [ ] import export using data.table
+- [ ] dplyr \ tidyverse for subsetting data
+- [ ] vtrack  
+- [ ] advanced plotting using ggplot2 and Rcolorbrewer 
+- [ ] abacus plots
+- [ ] residency
+- [ ] leaflet
 
 Working with spatial objects
-- [X] A 
+- [ ] libraryies - sp, rgeos, raster
+- [ ] polygons of land
+- [ ] lines or contours
+- [ ] raster (land vs sea)
+- [ ] points and the locations of hydrophones
+- [ ] export import of shapefiles
+- [ ] animations 
+- [ ] google earth
 
 Calculating area metrics
-- [X]  
+- [X] MCPs (array/matrix)
+- [ ] linear home rnage
+- [ ] brownian bridge
 
 Calculating distance metrics
-- [X] 
+- [ ] distance travelled (direct, circuitous, least cost)
+- [ ] plot distance through time
 
 
