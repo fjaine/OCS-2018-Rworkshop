@@ -4,11 +4,12 @@ Introduction
 
 Working with and manipulating large datasets
 - [ ] import export using data.table
-- [ ] dplyr \ tidyverse for subsetting data
+- [ ] ddply, dplyr \ tidyverse for subsetting data
 - [ ] vtrack  
 - [ ] advanced plotting using ggplot2 and Rcolorbrewer 
 - [ ] abacus plots
 - [ ] residency
+- [ ] centers of activity
 - [ ] leaflet
 
 Working with spatial objects
