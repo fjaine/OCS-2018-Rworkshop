@@ -2,7 +2,11 @@
 title: ![alt text](Images/Rlogo.jpeg) 
 subtitle: Animals in Motion 2018 Workshop - Stradbroke Island
 author: Dr Ross Dwyer & Dr Vinay Udyweyer
+<<<<<<< HEAD
 date: Feb 06, 2018
+=======
+date: Feb 05, 2018
+>>>>>>> origin/master
 output:
   html_document:
     toc: true
@@ -26,7 +30,13 @@ knitr::include_graphics("Images/Cassowary track.png")
 #Introductions
 
 ##Who are we?
+<<<<<<< HEAD
 Ross is a spatial ecologist interested in the drivers of movement, space use and community structure in free-ranging animals. He's used R for over 12 years, has published two R packages on CRAN, was lead R developer on the ZoaTrack.org project and regularly teaches R training courses at The University of Queensland and at other institutes around Australia. For more information and teaching resources, check out [Ross's website](https://www.uq.edu.au/eco-lab/content/dr-ross-dwyer).
+=======
+Ross is a spatial ecologist with a strong interest in understanding the drivers of movement, space use and community structure in free-ranging animals. I've used R for over 12 years, have published two R packages on CRAN and regularly teach R training courses at the University of Queensland and at other institutes around Australia.
+
+For more information and teaching resources, check out [my website](https://www.uq.edu.au/eco-lab/content/dr-ross-dwyer).
+>>>>>>> origin/master
 
 Vinay is...
 
@@ -40,6 +50,7 @@ This R workshop will be divided into 4 sessions intended to run about 1 hr 15 mi
 
 * Session 1: 
 
+<<<<<<< HEAD
 0.  Introduction to **R**
 1.  **import** large data files using **data.table**
 2.  **filter** our data using %pipes% the [tidyverse](http://tidyverse.org/) group of **R** packages
@@ -56,6 +67,22 @@ This R workshop will be divided into 4 sessions intended to run about 1 hr 15 mi
 
 * Session 3:
 
+=======
+1.  **import** our large data files using data.table
+2.  **filter** our data using %pipes% the [tidyverse](http://tidyverse.org/) group of R packages
+3.  advanced plotting using [ggplot2](http://ggplot2.org/) and Rcolourbrewer
+
+* Session 2:
+
+4.  Working with spatial objects
+5.  Export and Import  of Shapefiles
+6.  Animations 
+7.  Integration with Google Earth
+8.  Generate interactive maps using [leaflet](http://leafletjs.com/) 
+
+
+* Session 3:
+>>>>>>> origin/master
 9.  Calculating and plotting **home range** area metrics using
 a)  MCPs (array/matrix)
 b)  Linear home ranges
@@ -67,6 +94,7 @@ c)  Brownian bridges
 **The main principles we hope you will learn today are...**
 
 1. Data wrangling in **R** is safe, fast, reliable and repeatable
+<<<<<<< HEAD
 2. **R** can easily handle large datasets
 3. **R** is the ideal suite for performing your GIS operations
 4. that in **R**, it is easy to produce amazing publication-ready images 
@@ -83,6 +111,21 @@ The process of turning raw telemetry data into publishable results is a highly i
 For example, our analysis may require us to filter these large data sets and integrate with other data types that we have gathered ourselves, acquired from our collaborators or downloaded from online repositories. These data may have different header rows, the values may be in the wrong format/structure or likely cover different spatial or temporal scales. The spatial and temporal component of the data may also be important, requiring us to apply specialised analytical techniques and GIS operations. Finally, multiple software platforms may be needed to process the data, run the analyses and generate results. 
 
 This process can require a huge personal investment in time: rearranging data, removing erroneous values, purchasing, downloading and learning the new software, and running analyses. Furthermore merging together excel spreadsheets, filtering data and preparing data for statistical analyses and plotting in different software packages can introduce all sorts of errors. 
+=======
+2. R is the ideal suite for performing your GIS operations
+3. R can easily handle large datasets
+4. that in R, it is relativelty easy to produce amazing images and to share these with collaborators
+
+---------------------------------------
+
+##The Challenge
+
+The process of turning raw telemetry data into publishable results is a highly involved process. Ecological data sets are becoming larger, and larger as they are being gathered over longer time periods, over larger spatial extents and at increasing temporal resolutions. While this is increasing our ability to detect subtle patterns, these data sets are becoming so vast that they come with additional challenges.
+
+Our analysis may require us to filter these large data sets and integrate components with other data sets that we have gathered ourselves, acquired from our collaborators or downloaded from online repositories. These data may have different header rows, the values may be in the wrong format or likely cover different spatial or temporal scales. This spatial and temporal component may also be important - for integrating with other data sets or requiring us to apply specialised analytical techniques. Finally, multiple software platforms may be needed to process the data, run the analyses and generate results. 
+
+This process can require a huge investment in time: rearranging data, removing erroneous values, purchasing, downloading and learning the new software, and running analyses. Furthermore merging together excel spreadsheets, filtering data and preparing data for statistical analyses and plotting in different software packages can introduce all sorts of errors. 
+>>>>>>> origin/master
 
 *There is a better way...*
 
@@ -92,7 +135,11 @@ This process can require a huge personal investment in time: rearranging data, r
 
 **R** is a powerful language for data wrangling and analysis because...
 
+<<<<<<< HEAD
 1. It is relatively **fast** to run commands
+=======
+1. It is relatively **fast** to process commands
+>>>>>>> origin/master
 2. You can create **repeatable** scripts
 3. You can **trace errors** back to their source
 4. You can **share your scripts** with other people
@@ -120,12 +167,19 @@ It is worth updating these software on a regular basis as some of the most power
 THere are a number of good reasons why you should work with projects in RStudio.
 1.  We may want our R scripts to be saved into a place where they link seamlessly to other documents and data files for our research project.
 2.  We may also want our tables, figures and statistical results to be written to locations on our computer where they are easy to locate.
+<<<<<<< HEAD
 3.  We may work on multiple workstations (desktops, laptops) that we want our code to be completely transferable using cloud infrastructure (e.g. [Dropbox]<http://www.dropbox.com/>, [OneDrive]<http://www.onedrive.com/>)
 3.  It allows it to shark work folders, data and R code with collaborators who are working on the same projects
 
 ![alt text](Images/Github download.png)"
 
 The folder **OCS-2018-Rworkshop** downloaded from [GitHub]<https://github.com/RossDwyer/OCS-2018-Rworkshop>  contains the course documents, telemetry data and GIS files we are going to be working with. This is organised in the same format that we organise all our project files, and we have found it completely transferable across all the projects  we are involved with. The main project folder contains the following sub folders:
+=======
+3.  We may work on multiple workstations (desktops, laptops) that we want our code to be completely transferable using cloud infrastructure (e.g. Dropbox, OneDrive)
+3.  It allows it to shark work folders, data and R code with collaborators who are working on the same projects
+
+The folder **OCS-2018-Rworkshop** downloaded from GitHub<https://github.com/RossDwyer/OCS-2018-Rworkshop>  contains the course documents, telemetry data and GIS files we are going to be working with. This is organised in the same format that we organise all our project files, and we have found it completely transferable across all the projects  we are involved with. The main project folder contains the following sub folders:
+>>>>>>> origin/master
 
 1.  Documents
 2.  Data
@@ -152,6 +206,7 @@ When a *New Project* is created, R Studio:
 
 Working with Projects is a good idea because it saves the address that files are located and makes you coding much more elegant. It also allows you to share your script easily and seamlessly with collaborators.
 
+<<<<<<< HEAD
 ---------------------------------------
 
 
@@ -194,6 +249,20 @@ library(VTrack)
 ##  Importing large data files using **data.table**
 
 In the first session we are going to work with a data set containing locations from X estuarine crocodiles (*Crocodylus porosus*). These were all large animals (X m Total length) captured and tagged with assistance of Australia Zoo and funding from the Australian Research Council Linkage scheme. Crocodiles were tracked for between X and X months usong a network of acoustic hydrophones deployed along a river system.
+=======
+------------------------------------------
+
+![Southern cassowary with leg-mounted GPS tag](Images/caro_cass_tag.jpg)
+
+# Session 1: Introduction to spatial data 
+
+In this Session we are going to work with a data set containing locations from 3 GPS-tagged southern cassowaries (*Casuarius johnsonii*). These orphaned birds were tagged and released following up to 12 months rehabilitation at the [DERM facility at Garners Beach, N. QLD](http://savethecassowary.org.au/our-projects/cassowary-rehabilitation/). Their movements were tracked for between 6 and 20 weeks following the bird's release.
+
+These data were obtained from the [ZoaTrack.org online telemetry database](https://zoatrack.org/projects/2), where they were publicly available under a Creative Commons Attribution License.  Terms of use require the following citations for both the data and the scientific manuscript.
+
+1.  Dwyer, R, Campbell, H (2016) Data from: 'Tracking juvenile cassowaries on Cape Tribulation using GPS-based telemetry'. ZoaTrack.org. doi: http://dx.doi.org/10.4226/68/5701F934048EE
+2.  Campbell, H.A., Dwyer, R.G., Sullivan, S., Mead, D., Lauridsen, G. (2014). Chemical immobilisation and satellite tagging of free-living southern cassowaries. Australian Veterinary Journal 92(7): 240-245. 
+>>>>>>> origin/master
 
 
 ```{r, echo=FALSE,message=FALSE,include=TRUE}
@@ -247,11 +316,16 @@ leaflet(cassdat.sp) %>%
             opacity = 1)
 
 ```
+<<<<<<< HEAD
 The web map of hydrophone locations that we will make at the end of **Session 1**
+=======
+The web map of cassowary GPS locations that we will make at the end of **Session 1**
+>>>>>>> origin/master
 
 
 ------------------------------------------
 
+<<<<<<< HEAD
 ##Reading large telemetry data sets into **R**
 
 We load a file into **R**, by telling it which file to load (`croc-data.csv`) and where to find it (i.e. in the `Data` folder).
@@ -262,6 +336,17 @@ crocdat <- read.data('Data/croc-data.csv', header = TRUE) ## Vinay to add data.t
 ```
 
 The data.table package is new functionality within **R** and is very effective at loading in very large files, such as those exported from the [Vemco VUE database]
+=======
+## Reading telemetry data into **R**
+
+We load a file into **R**, by telling it which file to load (`zoatrack_data.csv`) and where to find it (i.e. in the `Data` folder).
+
+```{r}
+# Load the cassowary data
+cassdat <- read.csv('Data/zoatrack-data.csv', header = TRUE)
+```
+
+>>>>>>> origin/master
 
 **A note about Excel files**  
 
@@ -269,7 +354,10 @@ Don’t use '.xlsx' or '.xls' files for saving data. The problem with '.xls' and
 
 A stable way to save your data is as a '.csv' file, which stands for 'comma separated values'. These are simply values separated by 'commas' and rows defined by 'returns'. If you select 'Save as’ in excel, you can choose '.csv' as one of the options. If you open the .csv file I have given you using a text editor, you will see it is just words, numbers and commas.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 ##Accessing variables in the data frame
 The rules we learned above for accessing values of an object also apply to data frames. A data frame is a special ‘class’ of an object, where there are multiple variables, stored in names columns and multiple rows for our samples. Every variable has the same number of samples. A key difference from the objects we created earlier is that now we have both rows and columns. Rows and columns are indexed by using a comma as a separator. Try the following code:
 
@@ -288,6 +376,7 @@ cassdat$DATE[1:5] #provides athe first five values for that object
 cassdat[,'DELETED'] #provides all the data for that object
 ```
 
+<<<<<<< HEAD
 ![pipes are awesome!](Images/mario.png)
 
 Now that we've successfully loaded in our tracking dataset, lets start having a closer look at the data using pipes `%>%`
@@ -316,6 +405,13 @@ We can get have a quick look at the data frame by typing:
 cassdat.df %>% View()
 cassdat.df %>% head() #first 6 rows by default
 cassdat.df %>% tail(10) #specify we want to look at the last 10 rows
+=======
+#We can get have a quick look at the data frame by typing:
+
+```{r,eval=FALSE}
+head(cassdat) #first 6 rows by default
+tail(cassdat, 10) #last ten rows
+>>>>>>> origin/master
 ```
 
 This functionality is particularly useful if the data frame is very large!
@@ -325,16 +421,22 @@ Note the `()` around the data frame, as opposed to the `[]` we used for indexing
 We can look at the data more closely using the `nrow`, `ncol`, `length`, `unique`, `str()` and `summary()` functions.
 
 ```{r,eval=FALSE}
+<<<<<<< HEAD
 cassdat.df %>% nrow() # number of rows in the data frame
 cassdat.df %>% ncol() # number of columns in the data frame
 
 cassdat.df %>% str() # provides internal structure of an R object
 cassdat.df %>% summary() # Provides result summary of the data frame
+=======
+nrow(cassdat) # number of rows in the data frame
+ncol(cassdat) # number of columns in the data frame
+>>>>>>> origin/master
 
 length(cassdat$ANIMALID) # the number of values within a vector (same as the number of rows in the dataset)
 
 unique(cassdat$ANIMALID) # We use the unique function to extract the unique values for the tags deployed
 
+<<<<<<< HEAD
 
 min(cassdat$DATE) # provide the date of the first detection in our database
 max(cassdat$DATE) # provide the date of the last detection in our database
@@ -475,6 +577,86 @@ However, this plot is  a little misleading - the longitude and latitude fields h
 
 ------------------------------------------
 
+=======
+str(cassdat) # provides internal structure of an R object
+summary(cassdat) # Provides result summary of the data frame
+```
+
+The `str()` function tell us how **R** has classified our objects into various data types. 
+
+In the result `summary()` of the dataframe, you can see what influence the *data type* has on the results that are presented. Those data columns that are are non-numeric and are not logicals (i.e. TRUE/FALSE) have been converted to factors (e.g. `ANIMALID` and `DATE`). For these factors, we are presented with a *frequency of occurences* for each factor level (note Annabelle has 1013 records). For those data columns that are numeric, we are presented with the minimum, mean, maximum and quartiles in the result summary.
+
+##Working with dates and times in **R**
+
+See how **R** currently believes that our `DATE` column is a factorial? If we would like to plot our data in chronological order, or to extract the first or last locations for each animal, we first need to tell **R** that this `DATE` column represents actual dates.
+
+To do this, we use the `as.POSIXct()` command, and state what datetime format our data is in using the `format = "%"` statement. Note that in this case we have the R default format of dates plus times: "Y-m-d H:M:S". 
+
+We then do some statistical summaries to make sure this is correct using the `min`, `max` and `summary` command in **R**.
+
+```{r,eval=FALSE}
+cassdat$DATE <- as.POSIXct(cassdat$DATE, format = "%Y-%m-%d %H:%M:%S")
+
+min(cassdat$DATE) # First location in our dataset
+max(cassdat$DATE) # Last location in our dataset
+summary(cassdat$DATE) 
+```
+
+##Filtering datasets
+The `subset( )` function is one of the easiest way to select variables and observations. 
+
+In the following example, we subset our data for only those locations that have not been removed in ZoaTrack (`DELETED == FALSE`)
+
+```{r}
+# using subset function 
+cassdat2 <- subset(cassdat, DELETED== "FALSE")
+```
+
+By plotting these data, we can see which data points hace been removed
+
+```{r}
+plot(cassdat$LONGITUDE,cassdat$LATITUDE)
+points(cassdat2$LONGITUDE,cassdat2$LATITUDE,col=cassdat$ANIMALID,pch=16)
+```
+
+From the interactive map at the beginning of this exercise, you will see that the deleted locations (white circles) were obatined prior to the devices being attached to the animals (i.e. at our accomodation in Cairns and enroute to our release site!)
+
+However, this plot is  a little misleading - the longitude and latitude fields have been distorted to fit on the x and y axes. In order to fix this, we'll need to install a few additional R packages.
+
+------------------------------------------
+
+##Installing packages
+
+Part of the reason R has become so popular is the vast array of packages that are freely available and highly accessible. In the last few years, the number of packages has grown exponentially - 8000 at my last check on CRAN! These can help you to do a galaxy of different things in R, including running complex analyses, drawing beautiful figures, running R as a GIS, constructing your own R packages, building web pages and even writing introductory R course handbooks!
+
+Let’s suppose you want to load the *sp* package to access this package's incredible spatial functionality.
+
+If this package is not already installed on your machine, you can download it from the web by using the following command in R.
+
+```
+install.packages("sp", repos='http://cran.us.r-project.org')
+```
+
+In this example, `sp` is the package to be downloaded and 'http://cran.us.r-project.org' is the repository where the package will be accessed from
+
+Multiple packages can be loaded at the same time by listing the required packages in a vector 
+
+```
+install.packages(c("sp","rgdal","rgeos","adehabitatLT","adehabitatHR"), repos='http://cran.us.r-project.org')
+```
+
+We then load the required packages using the `library()` function.
+
+```{r, echo=FALSE}
+library(sp)
+library(rgdal)
+library(rgeos)
+library(adehabitatLT)
+library(adehabitatHR)
+```
+
+Here we have installed and loaded our required **R** spatial packages, including the excellent adehabitatHR and adehabitatLS packages. These last two were built specifically for working with animal telemetry data.
+>>>>>>> origin/master
 
 ----------------------------
 
@@ -802,6 +984,68 @@ kml(newXY.st, dtime = 24*3600, colour = id, shape = shape, labels = "", kmz=TRUE
 ------------------------------------------
 
 
+<<<<<<< HEAD
+=======
+# Session 2: tidy style, pipes and ggplot2
+
+
+![The tidyverse](Images/TIDYVERSE.jpg)
+
+<br>  
+
+In this session we will be having a look into the *tidyverse* group of R packages which have really revolutionised the way we work with big data and the way we visualise our results.
+
+##The tidyverse
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+
+###What is the tidyverse?
+* The [tidyverse](http://tidyverse.org/) is the collective name given to suite of R packages designed mostly by Hadley Wickham.
+
+* Before it was formalised in 2016 it was loosely referred to as the `hadleyverse`.
+* Packages share a common API and design philosophy intended to create a **"Pit of Success"**.
+
+###Members of the tidyverse
+broom, **dplyr**, forcats, **ggplot2**, haven, httr, hms, jsonlite, lubridate, magrittr, modelr, purrr, **readr**, readxl, stringr, tibble, rvest, **tidyr**, xml2
+
+###tidy style
+tidyverse code has a certain look:
+```{r, eval = FALSE}
+exampledata %>%
+  gather(code, value, new_sp_m014:newrel_f65, na.rm = TRUE) %>% 
+  mutate(code = stringr::str_replace(code, "newrel", "new_rel")) %>%
+  separate(code, c("new", "var", "sexage")) %>% 
+  select(-new, -iso2, -iso3) %>% 
+  separate(sexage, c("sex", "age"), sep = 1)
+```
+
+ggplot, one of the packages in the tidyverse, has a similar look...
+```{r, eval = FALSE}
+exampledata  %>% 
+ggplot(aes(x=ntags, y=nPU)) +
+  geom_point(alpha = 0.1,show_guide = F) +
+  geom_jitter(width = 0.01, height = 0.01) +
+  xlab("Number of tags") +
+  ylab("Number of planning units") +
+  theme_bw() +
+  theme(legend.title=element_blank(),
+        axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  guides(color=guide_legend("season"), fill = guide_legend("season")) +
+  geom_smooth(method="lm", formula = y~log(x), se = F, size = 1) 
+```
+
+
+-[Grolemund, Wickham, 2016 R for Data Science](http://r4ds.had.co.nz/tidy-data.html#case-study)
+* The documentation of this style is still evolving.
+* [This is a good start](https://rpubs.com/yeedle/tidyguide)
+
+>>>>>>> origin/master
 ------------------------------------------
 
 ##Loading in our spatial data
@@ -817,7 +1061,123 @@ cassdat.lt.WGS <- readOGR("GIS", "cass_points")
 head(cassdat.lt.WGS)
 ```
 
+<<<<<<< HEAD
 
+=======
+------------------------------------------
+
+##Introduction to pipes `%>%`
+
+![pipes are awesome!](Images/mario.png)
+
+Now that we've successfully loaded in our spatial dataset, lets start having a closer look at the data using pipes `%>%`
+
+* Originally from the `magrittr` package but has been imported to the `tidyverse`.
+* `%>%` is an **infix operator**. This means it takes two operands, left and right.
+* 'Pipes' the **output** of the last expression/function (left) forward to the **first input** of the next funciton (right).
+
+```{r, eval = FALSE}
+#For example, to see what class our data is in, we could use this code...
+class(cassdat.lt.WGS)
+
+#Alternatively in the tidy verse we could use this code...
+cassdat.lt.WGS %>% class()
+```
+
+### Benefits of %>% and tidy style
+* Functions flow in natural order that tells story about data.
+* Code effects are easy to reason about by inserting `View()` or `head()` into pipe chain.
+* Common style makes it easy to understand collaborator (or your own) code.
+
+
+```{r}
+# First convert the spatial dataframe back to a data frame
+cassdat.df <- as.data.frame(cassdat.lt.WGS) 
+cassdat.df$date <- as.POSIXct(cassdat.df$date)
+
+# Now insert functions into the pipe chain
+cassdat.df %>% View()
+cassdat.df %>% head()
+```
+
+------------------------------------------
+
+## Dplyr
+* `dplyr` is the data wrangling workhorse of the tidyverse.
+* Provides functions, **verbs**, that can manipulate tibbles into the shape you need for analysis.
+* Has many backends allowing dplyr code to work on data stored in SQL databases and big data clusters.
+    - Works via translation to SQL. Keep an eye out for the SQL flavour in `dplyr`
+
+###Basic vocabulary
+* `select()` columns from a tibble 
+* `filter()` to rows matching a certain condition
+* `mutate()` a tibble by changing or adding rows
+* `arrange()` rows in order
+* `group_by()` a variable
+* `summarise()` data over a group using a function
+
+Check out this useful [Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) for data wrangling.
+
+
+###`select`
+
+We can use the `select` function in Dplyr to choose the columns we want to include for our analyses and plotting
+
+```{r}
+# Select the rows we are interested in
+cassdat.df2 <- 
+  cassdat.df %>% 
+  select(coords.x1,coords.x2,id,date,dt,dist,abs_angle,rel_angle,R2n) %>%
+  select(-R2n)
+
+head(cassdat.df2)
+```
+
+###`filter` and `arrange`
+Subset the data to rows matching logical conditions and then arrange according to particular attributes
+```{r, eval=FALSE}
+filter(cassdat.df2, id == "M2") %>%
+  arrange(dist)
+
+filter(cassdat.df2, id == "M2") %>%
+  arrange(desc(dist)) 
+```
+
+###`mutate`
+Add additional variables to an existing data frame
+```{r}
+# Add an hour onto the time fields
+cassdat.df3 <- 
+  cassdat.df2 %>%
+  mutate(date2 = date + (60*60*10)) # Adds a date field and then changes the data from UTM to AEST)(i.e. adds 10 hrs)
+
+# Here we use functions contained inthe lubridate package to add date columns to our dataset
+library(lubridate)
+
+# extract hour and month using lubridate function
+# attach the column using the mutate function
+cassdat.df4 <- 
+  cassdat.df3 %>%
+  mutate(hourofday = hour(date2)) %>%
+  mutate(month = month(date2))
+
+## Now convert the duration between locations from seconds to minutes
+cassdat.df5 <-  cassdat.df4 %>%
+  mutate(dt_hr= (dt)/(60*60))
+```
+
+###`summarise`
+Determine the total distances travelled for the total duration plus in a given month
+```{r}
+cassdat.df5 %>%
+  group_by(id) %>%
+  summarise(totaldist = sum(dist, na.rm=T))
+
+cassdat.df5 %>%
+  group_by(month, id) %>%
+  summarise(monthlydist = sum(dist, na.rm=T))
+```
+>>>>>>> origin/master
 
 ------------------------------------------
 
