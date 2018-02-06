@@ -1,6 +1,6 @@
 Introduction
-- [ ] why r
-- [ ] working with projects
+- [X] why r
+- [X] working with projects
 
 Working with and manipulating large datasets
 - [ ] import export using data.table
@@ -13,7 +13,7 @@ Working with and manipulating large datasets
 - [ ] leaflet
 
 Working with spatial objects
-- [ ] libraryies - sp, rgeos, raster
+- [ ] libraries - sp, rgeos, raster
 - [ ] polygons of land
 - [ ] lines or contours
 - [ ] raster (land vs sea)
@@ -23,7 +23,7 @@ Working with spatial objects
 - [ ] google earth
 
 Calculating area metrics
-- [X] MCPs (array/matrix)
+- [ ] MCPs (array/matrix)
 - [ ] linear home rnage
 - [ ] brownian bridge
 
