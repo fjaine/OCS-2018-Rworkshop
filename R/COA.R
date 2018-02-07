@@ -18,7 +18,7 @@ COA<-function(data, id , timestep, ...){
   sapply(c("lubridate","plyr"), require, character.only=TRUE)
   
   ## Format date time
-  data$dt<-ymd_hms(data$Date.and.Time..UTC.)
+  data$dt<-ymd_hms(data[,grep("Date",colnames(data))])
   data[,id]<-droplevels(as.factor(data[,id]))
   
   ## Convert timestep from minutes to seconds
