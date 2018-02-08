@@ -37,7 +37,8 @@ abaplot<-function(data, id, startwindow=NULL, endwindow=NULL, tagdate=NULL, tagl
   if(ggplot){
     require(ggplot2)
     p<-ggplot(data, aes(as.Date(data$dt), data[,id]), environment = environment()) + geom_point(...) +
-      xlab(xlab) + ylab(ylab) + scale_x_date(date_labels =  "%b\n%Y", date_minor_breaks = "1 weeks")
+      xlab(xlab) + ylab(ylab) + scale_x_date(date_labels = "%b\n%Y", date_minor_breaks = "1 month")
+      
     if(plotbat){
       print(p + geom_point(data=data.frame(tag=1:length(levels(data[,id])), startdate=startdate), aes(x = startdate, y = tag), pch="|", colour=8, size=5)+
               geom_point(data=data.frame(tag=1:length(levels(data[,id])), enddate=enddate), aes(x = enddate, y = tag), pch="|", colour=8, size=5))
