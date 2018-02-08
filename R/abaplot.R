@@ -4,18 +4,20 @@
 ## Function to create abacus plot to visualise daily detection patterns in multiple
 ## tagged animals
 
-abaplot<-function(data, id, startwindow=NULL, endwindow=NULL, tagdate=NULL, taglife=NULL, mar=c(5,6,1,1), xlab="Date", ylab="Tag", ggplot=TRUE, RI=TRUE, pch=20, ...){
+abaplot<-function(data, id, startwindow=NULL, endwindow=NULL, tagdate=NULL, taglife=NULL, mar=c(5,6,1,1), xlab="Date", ylab="Tag", ggplot=TRUE, RI=TRUE, pch=20, plotbat=FALSE, ...){
   ####################################################################################
   ## data            data frame containing passive telemetry dataset; VEMCO field naming accepted 
   ## id              field in 'data' with unique individual tag/animal identifier
   ## startwindow     start date for x axis (format "yyyy-mm-dd"); if NULL (default) all data is plotted
   ## endwindow       end date for x axis (format "yyyy-mm-dd"); if NULL (default) all data is plotted
+  ## plotbat         plot points indicating battery life of transmitter; if tagdate and taglife values 
+  ##                  provided, else first and last date of detection assumed (default = FALSE)
   ## tagdate         vector of dates each tag was released; if NULL (default) first date of detection
   ##                  is presumed to be date tagged
   ## taglife         battery life of tag (in days); if NULL (default) last date of detection
   ##                  is presumed to be end of battery life
   ## ggplot          use ggplot2 for plotting function
-  ## RI              calculate and print detection summary and Residency Index (RI)
+  ## RI              calculate and print detection summary and Residency Index (RI) table
   ## ...             additional characteristics of plotting function
   ####################################################################################
   sapply(c("lubridate","plyr"), require, character.only=TRUE)
@@ -34,12 +36,14 @@ abaplot<-function(data, id, startwindow=NULL, endwindow=NULL, tagdate=NULL, tagl
   ## Plot abacus
   if(ggplot){
     require(ggplot2)
-    print(ggplot(data, aes(as.Date(data$dt), data[,id]), environment = environment()) + geom_point() +
-      xlab(xlab) + ylab(ylab) + scale_x_date(date_labels =  "%b\n%Y", date_minor_breaks = "1 weeks") +
-      geom_point(data=data.frame(tag=1:length(levels(data[,id])), startdate=startdate), aes(x = startdate, y = tag), pch="|", colour=8, size=5)+
-      geom_point(data=data.frame(tag=1:length(levels(data[,id])), enddate=enddate), aes(x = enddate, y = tag), pch="|", colour=8, size=5) +
-      theme_linedraw())
-    
+    p<-ggplot(data, aes(as.Date(data$dt), data[,id]), environment = environment()) + geom_point(...) +
+      xlab(xlab) + ylab(ylab) + scale_x_date(date_labels =  "%b\n%Y", date_minor_breaks = "1 weeks")
+    if(plotbat){
+      print(p + geom_point(data=data.frame(tag=1:length(levels(data[,id])), startdate=startdate), aes(x = startdate, y = tag), pch="|", colour=8, size=5)+
+              geom_point(data=data.frame(tag=1:length(levels(data[,id])), enddate=enddate), aes(x = enddate, y = tag), pch="|", colour=8, size=5))
+    }else{
+      print(p)
+    }
   }else{
     par(mar=mar)
     plot(as.Date(data$dt),as.integer(data[,id]), xaxt="n", yaxt="n", xlab=xlab, ylab=ylab, pch=NA, xlim=xlim, ylim=extendrange(1:length(levels(data[,id])), f=0.1))
@@ -48,9 +52,11 @@ abaplot<-function(data, id, startwindow=NULL, endwindow=NULL, tagdate=NULL, tagl
     axis.Date(1, at=seq(as.Date(format(min(data$dt), "%Y-%m-01"))-31,as.Date(format(max(data$dt), "%Y-%m-01"))+31, "months"), format='%b\n%Y', cex.axis=0.8, padj=0.2)
     axis.Date(1, at=seq(as.Date(format(min(data$dt), "%Y-%m-01"))-31,as.Date(format(max(data$dt), "%Y-%m-01"))+31, "weeks"),labels = FALSE, tcl = -0.3)
     axis.Date(1, at=seq(as.Date(format(min(data$dt), "%Y-%m-01"))-31,as.Date(format(max(data$dt), "%Y-%m-01"))+31, "days"), labels = FALSE, tcl = -0.15)
-    points(startdate, 1:length(levels(data[,id])), pch="|", col=8)
-    points(enddate, 1:length(levels(data[,id])), pch="|", col=8)
     box() 
+    if(plotbat){
+      points(startdate, 1:length(levels(data[,id])), pch="|", col=8)
+      points(enddate, 1:length(levels(data[,id])), pch="|", col=8) 
+    }
   }
   
   if(RI){
